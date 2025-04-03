@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YUCA - Zero Hunger Initiative</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #a8e063, #56ab2f);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            color: #27ae60;
+            margin: 0;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            color: #27ae60;
+            border-bottom: 2px solid #27ae60;
+            padding-bottom: 10px;
+        }
+
+        .animation-container {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .animation-element {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #f39c12;
+            animation: move 5s linear infinite;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translateX(-100px);
+            }
+
+            100% {
+                transform: translateX(100vw);
+            }
+        }
+
+        .stakeholder-cards {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .stakeholder-card {
+            width: 30%;
+            padding: 20px;
+            background-color: #f0f8ff;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .stakeholder-card h3 {
+            color: #27ae60;
+        }
+
+        .article {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>YUCA - Zero Hunger Initiative</h1>
+        <p>Empowering Communities to Combat Food Waste and Hunger</p>
+    </header>
+
+    <div class="container">
+        <div class="animation-container" id="animation-container"></div>
+
+        <div class="section">
+            <h2>The Global Challenge of Zero Hunger</h2>
+            <div class="article">
+                <p>Achieving Zero Hunger is a critical goal for sustainable development. Millions around the world face
+                    food insecurity, and the challenge is exacerbated by climate change, resource scarcity, and
+                    inefficient food systems. YUCA aims to provide resources and solutions to tackle these issues
+                    head-on.</p>
+
+                <p>Food waste is a significant contributor to this problem. According to the FAO, roughly one-third of
+                    all food produced for human consumption is wasted or lost. This waste not only deprives people of
+                    essential nutrients but also contributes to environmental degradation. YUCA promotes strategies to
+                    reduce food waste at every stage, from farm to table.</p>
+
+                <p>Sustainable agriculture is another key focus. By encouraging practices like crop rotation, reduced
+                    pesticide use, and efficient water management, we can ensure long-term food security while
+                    minimizing environmental impact.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Stakeholder Suggestions</h2>
+            <div class="stakeholder-cards">
+                <div class="stakeholder-card">
+                    <h3>Students</h3>
+                    <ul>
+                        <li>Reduce food waste in school canteens.</li>
+                        <li>Learn about sustainable agriculture.</li>
+                        <li>Participate in community gardens.</li>
+                        <li>Organize food drives and awareness campaigns.</li>
+                    </ul>
+                </div>
+                <div class="stakeholder-card">
+                    <h3>Farmers</h3>
+                    <ul>
+                        <li>Adopt efficient irrigation techniques.</li>
+                        <li>Use organic fertilizers and integrated pest management.</li>
+                        <li>Improve post-harvest storage and transportation.</li>
+                        <li>Diversify crops to build resilience.</li>
+                    </ul>
+                </div>
+                <div class="stakeholder-card">
+                    <h3>Policy Makers</h3>
+                    <ul>
+                        <li>Implement food waste reduction policies.</li>
+                        <li>Support sustainable farming practices through subsidies and incentives.</li>
+                        <li>Invest in food security programs and infrastructure.</li>
+                        <li>Promote public-private partnerships for food security.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Join the Movement</h2>
+            <p>YUCA invites you to join the movement towards Zero Hunger. Together, we can create a world where everyone
+                has access to safe, nutritious, and sufficient food.</p>
+            <p>Connect with us and learn how you can contribute to this vital cause.</p>
+        </div>
+    </div>
+
+    <script>
+        function createAnimationElements() {
+            const container = document.getElementById('animation-container');
+            const colors = ['#f39c12', '#e74c3c', '#3498db', '#9b59b6', '#2ecc71', '#f1c40f']; // More colors!
+            const numElements = 10; // More balls!
+
+            for (let i = 0; i < numElements; i++) {
+                const element = document.createElement('div');
+                element.classList.add('animation-element');
+                element.style.top = `${Math.random() * 180}px`; // Random vertical position
+                element.style.left = `${Math.random() * 90}vw`; // Random horizontal position
+                element.style.backgroundColor = colors[i % colors.length]; // Cycle through colors
+                container.appendChild(element);
+            }
+        }
+
+        createAnimationElements();
+
+        // Watson Assistant Chatbot Integration
+        window.watsonAssistantChatOptions = {
+            integrationID: "29711cf1-57cf-4b57-93ba-f2e06fdffa5f", // Replace with your integration ID
+            region: "us-south", // The region your integration is hosted in
+            serviceInstanceID: "4f593ca6-5585-4c3f-bb00-4cb790ae0495", // Replace with your service instance ID
+            onLoad: async (instance) => { await instance.render(); }
+        };
+        setTimeout(() => {
+            const script = document.createElement('script');
+            script.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" +
+                (window.watsonAssistantChatOptions.clientVersion || 'latest') +
+                "/WatsonAssistantChatEntry.js";
+            document.head.appendChild(script);
+        }, 0);
+    </script>
+</body>
+
+</html>
